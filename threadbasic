@@ -1,0 +1,45 @@
+// public class Mainthread implements Runnable {
+
+//     public void run() {
+
+//         System.out.println("thread is running ");
+
+//     }
+
+//     public static void main(String[] args) {
+
+//         Mainthread mt = new Mainthread();
+
+//         mt.run();
+
+// }
+//}
+
+class A extends Thread {
+
+    public void ger() {
+
+        System.out.println("hi guys ");
+    }
+}
+
+class B extends Thread {
+
+    public void ger() {
+
+        for (int i = 0; i < 100; i++) {
+            System.out.println("hello ");
+        }
+    }
+}
+
+class Mainthread{
+
+    B b  = new B();
+    A a = new A();
+
+    b.start();
+    a.start();
+
+
+}
