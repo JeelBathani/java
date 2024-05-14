@@ -1,0 +1,25 @@
+//jdbc connection establish  using intellij ide  and postgre sql
+
+import java.beans.Statement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+
+public class demo {
+    public  static void main(String[] args) throws Exception {
+
+        String url = "jdbc:postgresql://localhost:5432/postgres";
+        String username = "postgres";
+        String pass = "TEMP2024";
+        String sql = "select sname from study where sid = 2";
+        Class.forName("org.postgresql.Driver");
+        Connection con = DriverManager.getConnection(url,username,pass);
+      Statement st = (Statement) con.createStatement();
+        ResultSet rs = st.execute(sql);
+        rs.getNString();
+
+        System.out.println(rs.next());
+      con.close();
+    }
+
+}
